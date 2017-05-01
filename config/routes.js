@@ -9,6 +9,7 @@ var cardsController = require('../controllers/cardsController');
 // show route
 router.route('/cards/:_id')
 	.get(cardsController.cardGet)
+	.delete(cardsController.cardDelete)
 
 
 // index route

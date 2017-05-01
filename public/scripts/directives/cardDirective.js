@@ -6,8 +6,11 @@ function wdiCard() {
 		restrict: 'E',
 		replace: true,
 		templateUrl: "templates/cardDirective.html",
+		controller: 'CardsController',
+		controllerAs: 'cardsController',
 		scope: {
-		       question: '@'
+		       question: '@',
+		       id: '@'
 		}
 	};
 	return directive;

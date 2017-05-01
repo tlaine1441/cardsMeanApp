@@ -10,17 +10,18 @@ function CardsController($http) {
   var self = this;
   self.newCard = {};
   self.addCard = addCard;
-
+  self.getCards = getCards;
+  self.deleteCard = deleteCard;
+  self.questionsList=[];
+  getCards();
   function getCards() {
     // Make request to get card data
     $http
       .get('/cards')
       .then(function(response){
         self.questionsList = response.data;
-        //console.log(self.all);
     });
   }
-  getCards();
 
   function addCard() {
     console.log(self.newCard);
@@ -30,5 +31,15 @@ function CardsController($http) {
         getCards();
     });
     self.newCard = {};
+  }
+
+  function deleteCard(cardId) {
+    console.log(cardId);
+    $http
+      .delete('http://localhost:3000/cards/' + cardId)
+      .then(function(response){
+        self.getCards = [];
+        getCards();
+    });
   }
 }
