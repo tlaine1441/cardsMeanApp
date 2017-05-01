@@ -37,6 +37,7 @@ h1:after, .card h6:after {
   padding: 1rem;
   min-height: 16rem;
   position: relative;
+  margin-bottom: 1rem;
 }
 
 .card h6 {

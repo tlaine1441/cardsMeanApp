@@ -20,10 +20,11 @@ var cardGet = function(req, res) {
 }
 
 var cardPost = function(req, res) {
-	console.log(req.body.newQuestion);
-	db.Card.create({question: req.body.newQuestion} , function(err, card){
+	console.log(req.body.question);
+	db.Card.create({question: req.body.question} , function(err, card){
       if (err) { return console.log('err', err); }
       console.log("created", card);
+      res.send();
     });
 }
 
